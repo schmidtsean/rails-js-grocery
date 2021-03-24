@@ -4,6 +4,10 @@ class Api::GroceriesController < ApplicationController
     render json: Grocery.all 
   end
 
+  def show
+    render json: Grocery.find(params[:id])
+  end
+  
   def create
     @grocery = Grocery.new(grocery_params)
     if @grocery.save 
