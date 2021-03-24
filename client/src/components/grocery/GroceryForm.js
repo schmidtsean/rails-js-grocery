@@ -7,8 +7,8 @@ import { Component } from 'react';
     c.preventDefault()
     if (this.props.id) {
       const { updateGrocery, toggleEdit } = this.props
-      this.setState({ item: "", complete: false})
-      updateGrocery(this.state)
+      
+      updateGrocery(this.props.id, this.state)
 
       toggleEdit()
     } else {
